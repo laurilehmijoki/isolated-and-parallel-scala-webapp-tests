@@ -46,3 +46,8 @@ in Scalatra, if you pay attention to your test infrastructure.
 * Scalatra
 * Guice
 * Embedded Jetty 8
+
+## Credit
+
+Thanks to Tomi Takussaari for giving the idea of how to run multiple Guice
+injector instances side-by-side.
