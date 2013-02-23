@@ -44,8 +44,9 @@ in Scalatra, if you pay attention to your test infrastructure.
 ## Tools
 
 * Scalatra
+* Scala specs2
 * Guice
-* Embedded Jetty 8
+* Embedded Jetty
 
 ## Credit
 
