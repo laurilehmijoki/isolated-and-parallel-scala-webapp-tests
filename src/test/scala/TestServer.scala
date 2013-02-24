@@ -21,12 +21,16 @@ class TestServer(val port: Int = nextPort.getAndIncrement, spaceObject: String) 
     println("Shutting down server at port " + port)
   }
 
-  private def start() = TestServer.synchronized {
-    System.setProperty("hello.target", spaceObject)
-    val injector = Guice.createInjector(GuiceConfig.servletModule)
+  private def start() {
+    val injector = createInjector()
     server.setHandler(buildContext(injector))
     server.start()
     println("Started server at port " + port)
+  }
+
+  private def createInjector() = TestServer.synchronized {
+    System.setProperty("hello.target", spaceObject)
+    Guice.createInjector(GuiceConfig.servletModule)
   }
 
   private def buildContext(injector: Injector) = {
